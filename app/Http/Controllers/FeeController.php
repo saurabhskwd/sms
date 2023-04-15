@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Fee;
 use App\DataTables\FeeDataTable;
+use Alert;
 
 class FeeController extends Controller
 {
@@ -30,6 +31,14 @@ class FeeController extends Controller
      */
     public function store(Request $request)
     {
+        //validation
+        $request->validate([
+            'feedate' => 'required|min:5',
+            'studentname' => 'required|min:5',
+            'father' =>  'required|min:5',
+            'amount' => 'required',
+            'inwords'=> 'required',       
+        ]);
         $fee = new Fee;
         $fee->payment_date = $request->POST('feedate');
         $fee->sname = $request->POST('studentname');

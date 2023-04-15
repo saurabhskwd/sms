@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\StudentDetail;
 use App\DataTables\StudentdetailDataTable;
+use Alert;
 
 
 class StudentDetailController extends Controller
@@ -30,6 +31,18 @@ class StudentDetailController extends Controller
      */
     public function store(Request $request)
     {
+        //validation
+        $request->validate([
+            'sname' => 'required|min:5',
+            'fname' => 'required|min:5',
+            'mname' =>  'required|min:5',
+            'adhar' => 'required|min:14',
+            'address'=> 'required|min:5',
+            'category'=>'required',
+            'dob'=> 'required',
+            'phone'=>'required|min:10|max:10',
+            
+        ]);
         $student = new StudentDetail;
         $student->sname = $request->get('sname');
         $student->fname = $request->get('fname');

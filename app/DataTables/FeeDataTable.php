@@ -68,9 +68,13 @@ class FeeDataTable extends DataTable
                   ->width(60)
                   ->addClass('text-center'),
             Column::make('id'),
-            Column::make('add your columns'),
+            Column::make('sname'),
+            Column::make('fname'),
+            Column::make('payment_date'),
+            Column::make('amount'),
+            Column::make('amount_in_words'),
             Column::make('created_at'),
-            Column::make('updated_at'),
+            
         ];
     }
 

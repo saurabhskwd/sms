@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    @push('script')
-        {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-       
-    @endpush
+   
     <link href="//cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
 <script src="//cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-</head>
+</head>-->
 @extends('layouts.app')
+@section('title')
+   Studnet Detail
+@endsection
     @section('content')
     <div class="container">
         <div class="card">
